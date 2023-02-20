@@ -6,12 +6,16 @@ import com.example.graphqlcountries.domain.DetailedCountry
 import com.example.graphqlcountries.domain.GetCountriesUseCase
 import com.example.graphqlcountries.domain.GetCountryUseCase
 import com.example.graphqlcountries.domain.SimpleCountry
+import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CountriesViewModel(
+@HiltViewModel
+class CountriesViewModel @Inject constructor(
     private val getCountriesUseCase: GetCountriesUseCase,
     private val getCountryUseCase: GetCountryUseCase
 ) : ViewModel() {
