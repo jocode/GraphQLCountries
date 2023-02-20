@@ -1,4 +1,4 @@
-package com.example.graphqlcountries
+package com.example.graphqlcountries.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.graphqlcountries.ui.theme.GraphQLCountriesTheme
+import com.example.graphqlcountries.presentation.ui.theme.GraphQLCountriesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

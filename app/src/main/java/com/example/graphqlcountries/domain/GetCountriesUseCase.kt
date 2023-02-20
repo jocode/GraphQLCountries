@@ -1,6 +1,6 @@
 package com.example.graphqlcountries.domain
 
-class GetCountryUseCase(
+class GetCountriesUseCase(
     private val countryClient: CountryClient
 ) {
 

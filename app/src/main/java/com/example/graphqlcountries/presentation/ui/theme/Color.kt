@@ -1,4 +1,4 @@
-package com.example.graphqlcountries.ui.theme
+package com.example.graphqlcountries.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
