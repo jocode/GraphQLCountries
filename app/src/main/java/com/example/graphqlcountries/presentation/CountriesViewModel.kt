@@ -7,7 +7,6 @@ import com.example.graphqlcountries.domain.GetCountriesUseCase
 import com.example.graphqlcountries.domain.GetCountryUseCase
 import com.example.graphqlcountries.domain.SimpleCountry
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -52,11 +51,26 @@ class CountriesViewModel @Inject constructor(
         ) }
     }
 
+    fun searchTextChanged(text: String) {
+        _state.update { it.copy(
+            searchQuery = text,
+            isLoading = true
+        ) }
+
+        viewModelScope.launch {
+            _state.update { it.copy(
+                countries = getCountriesUseCase.execute(text),
+                isLoading = false
+            ) }
+        }
+    }
+
 
     data class CountriesState(
         val countries: List<SimpleCountry> = emptyList(),
         val isLoading: Boolean = false,
-        val selectedCountry: DetailedCountry? = null
+        val selectedCountry: DetailedCountry? = null,
+        val searchQuery: String = ""
     )
 
 }
