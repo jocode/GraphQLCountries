@@ -53,8 +53,7 @@ class CountriesViewModel @Inject constructor(
 
     fun searchTextChanged(text: String) {
         _state.update { it.copy(
-            searchQuery = text,
-            isLoading = true
+            searchQuery = text
         ) }
 
         viewModelScope.launch {

@@ -14,3 +14,9 @@ To [download the schema](https://www.apollographql.com/docs/kotlin/tutorial/02-a
 ```bash
 ./gradlew :app:downloadApolloSchema --endpoint='https://countries.trevorblades.com/graphql' --schema=app/src/main/graphql/com/example/schema.graphqls
 ```
+
+## Screenshots
+
+| Countries                                 | Country Details                               |
+|-------------------------------------------|-----------------------------------------------|
+| ![Countries](images/countries_screen.png) | ![Country Details](images/detail_country.png) |
